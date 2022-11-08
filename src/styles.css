@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: canal-bold-plain;
+    src: url(assets/fonts/CanalBoldPlain.otf);
+    font-family: canal-demi-plain;
+    src: url(assets/fonts/CanalDemiPlain.otf);
+    font-family: canal-light-plain;
+    src: url(assets/fonts/CanalLightPlain.otf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'canal-light-plain';
+}
