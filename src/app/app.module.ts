@@ -8,6 +8,9 @@ import { NavComponent } from './components/nav/nav.component';
 import { TabComponent } from './components/tab/tab.component';
 import { ContentComponent } from './components/content/content.component';
 import { TextboxComponent } from './components/textbox/textbox.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { TextboxComponent } from './components/textbox/textbox.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
