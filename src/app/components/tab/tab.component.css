@@ -1,7 +1,8 @@
-p{
+a{
     color: #ffffff;
     font-family: 'canal-light-plain';
     font-size: 12px;
+    text-decoration: none;
 }
 
 .default{
@@ -12,6 +13,6 @@ p{
 .highlighted{
     color: #95c633;
     text-decoration: underline;
-    text-underline-offset: calc(1rem - 1px);
+    text-underline-offset: 1rem;
     text-decoration-thickness: 2px;
 }
