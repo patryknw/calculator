@@ -1,27 +1,8 @@
-#main{
-    margin-top: 40px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-#textboxes{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#info{
-    font-size: 12px;
-    text-align: left;
-    color: #626262;
-}
-
 h1{
     font-family: 'canal-demi-plain';
-    font-size: 18px;
-    margin-top: 16px;
-    margin-bottom: 16px;
+    font-size: 22px;
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 hr{
@@ -30,4 +11,29 @@ hr{
     margin-top: 20px;
     margin-bottom: 12px;
     background-color: #626262;
+}
+
+.main{
+    margin-top: 34px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.textbox-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.textbox{
+    width: 100px;
+    flex: 1;
+}
+
+.info{
+    font-size: 14px;
+    text-align: left;
+    color: #626262;
 }
