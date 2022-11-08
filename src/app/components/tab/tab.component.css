@@ -1,0 +1,17 @@
+p{
+    color: #ffffff;
+    font-family: 'canal-light-plain';
+    font-size: 12px;
+}
+
+.default{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.highlighted{
+    color: #95c633;
+    text-decoration: underline;
+    text-underline-offset: calc(1rem - 1px);
+    text-decoration-thickness: 2px;
+}
