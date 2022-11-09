@@ -1,6 +1,6 @@
 <div class="main">
     <h1>Przelicznik kuchenny</h1>
-    <app-droplist text="Produkt"></app-droplist>
+    <div class="droplist"><app-droplist text="Produkt"></app-droplist></div>
     <div class="textbox-container">
         <div class="textbox"><app-textbox text="mililitr"></app-textbox></div>
         <div class="textbox"><app-textbox text="gram"></app-textbox></div>
@@ -16,4 +16,68 @@
         <p>1 łyżka ma pojemność 15 ml</p>
         <p>1 łyżeczka ma pojemność 5 ml</p>
     </div>
+
+
+    <!--
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#p-kuchenny" target="_self">Przelicznik kuchenny</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#p-jednostek" target="_self">Przelicznik jednostek</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#p-foremek" target="_self">Przelicznik foremek</a>
+        </li>
+    </ul>
+    
+    <div class="tab-content">
+        <div class="tab-pane container active" id="p-kuchenny">1</div>
+        <div class="tab-pane container fade" id="p-jednostek">2</div>
+        <div class="tab-pane container fade" id="p-foremek">3</div>
+    </div>
+    -->
+
+
+</div>
+
+<div class="main">
+    <h1>Przelicznik jednostek</h1>
+    <div class="textbox-container">
+        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+    </div>
+    <h1>Przelicznik jednostek</h1>
+    <div class="textbox-container">
+        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+    </div>
+    <h1>Przelicznik wag</h1>
+    <div class="textbox-container">
+        <div class="textbox"><app-textbox text="stopnie Celsjusza"></app-textbox></div>
+        <div class="textbox"><app-textbox text="stopnie Fahrenheita"></app-textbox></div>
+    </div>
+</div>
+
+<div class="main">
+    <h1>Przelicznik foremek</h1>
+    <h2>Twoja foremka</h2>
+    <div class="textbox-container">
+        <div class="textbox"><app-textbox text="długość"></app-textbox></div>
+        <div class="textbox"><app-textbox text="szerokość"></app-textbox></div>
+    </div>
+    <div class="textbox-container">
+        <div class="textbox"><app-radio group="foremka1" text="blacha"></app-radio></div>
+        <div class="textbox"><app-radio group="foremka1" text="tortownica"></app-radio></div>
+    </div>
+    <h2>Foremka z przepisu</h2>
+    <div class="textbox-container">
+        <div class="textbox"><app-radio group="foremka2" text="blacha"></app-radio></div>
+        <div class="textbox"><app-radio group="foremka2" text="tortownica"></app-radio></div>
+    </div>
+    <div class="textbox-container" [ngStyle]="{'width': '50%'}">
+        <div class="textbox"><app-textbox text="średnica"></app-textbox></div>
+    </div>
+    <h1>2.50</h1>
+    <h2>Do foremki powinieneś dodać 2.5 razy więcej składników, niż w przepisie.</h2>
 </div>

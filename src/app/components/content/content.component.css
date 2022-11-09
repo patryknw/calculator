@@ -5,6 +5,13 @@ h1{
     margin-bottom: 18px;
 }
 
+h2{
+    font-family: 'canal-light-plain';
+    font-size: 18px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
 hr{
     border: none;
     height: 1px;
@@ -17,6 +24,10 @@ hr{
     margin-top: 34px;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+.droplist{
+    margin-bottom: 16px;
 }
 
 .textbox-container{

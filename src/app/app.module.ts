@@ -9,6 +9,7 @@ import { TabComponent } from './components/tab/tab.component';
 import { ContentComponent } from './components/content/content.component';
 import { TextboxComponent } from './components/textbox/textbox.component';
 import { DroplistComponent } from './components/droplist/droplist.component';
+import { RadioComponent } from './components/radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DroplistComponent } from './components/droplist/droplist.component';
     TabComponent,
     ContentComponent,
     TextboxComponent,
-    DroplistComponent
+    DroplistComponent,
+    RadioComponent
   ],
   imports: [
     BrowserModule,
