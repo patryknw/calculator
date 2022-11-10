@@ -48,3 +48,15 @@ hr{
     text-align: left;
     color: #626262;
 }
+
+#tab1{
+    display: block;
+}
+
+#tab2{
+    display: none;
+}
+
+#tab3{
+    display: none;
+}

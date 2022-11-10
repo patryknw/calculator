@@ -13,6 +13,6 @@ p{
 .highlighted{
     color: #95c633;
     text-decoration: underline;
-    text-underline-offset: 22px;
+    text-underline-offset: 22.5px;
     text-decoration-thickness: 3px;
 }

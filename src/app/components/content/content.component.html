@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main" id="tab1">
     <h1>Przelicznik kuchenny</h1>
     <div class="droplist"><app-droplist text="Produkt"></app-droplist></div>
     <div class="textbox-container">
@@ -12,36 +12,13 @@
     </div>
     <hr/>
     <div class="info">
-        <p>1 szklanka ma pojemność 250 ml</p>
-        <p>1 łyżka ma pojemność 15 ml</p>
-        <p>1 łyżeczka ma pojemność 5 ml</p>
+        <p class="no-margin">1 szklanka ma pojemność 250 ml</p>
+        <p class="no-margin">1 łyżka ma pojemność 15 ml</p>
+        <p class="no-margin">1 łyżeczka ma pojemność 5 ml</p>
     </div>
-
-
-    <!--
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#p-kuchenny" target="_self">Przelicznik kuchenny</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#p-jednostek" target="_self">Przelicznik jednostek</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#p-foremek" target="_self">Przelicznik foremek</a>
-        </li>
-    </ul>
-    
-    <div class="tab-content">
-        <div class="tab-pane container active" id="p-kuchenny">1</div>
-        <div class="tab-pane container fade" id="p-jednostek">2</div>
-        <div class="tab-pane container fade" id="p-foremek">3</div>
-    </div>
-    -->
-
-
 </div>
 
-<div class="main">
+<div class="main" id="tab2">
     <h1>Przelicznik jednostek</h1>
     <div class="textbox-container">
         <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
@@ -59,7 +36,7 @@
     </div>
 </div>
 
-<div class="main">
+<div class="main" id="tab3">
     <h1>Przelicznik foremek</h1>
     <h2>Twoja foremka</h2>
     <div class="textbox-container">
