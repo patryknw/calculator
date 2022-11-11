@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { TabComponent } from '../tab/tab.component';
 
 @Component({
   selector: 'app-nav',
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {  
+  @Output() receiveTab = new EventEmitter();
+  @ViewChildren(TabComponent) children!:QueryList<TabComponent>;
+  
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getTab(event: any){
+    this.children.forEach((element) => element.setInactive());
+    this.receiveTab.emit({ event:event, tab:event.tab });
   }
 
 }

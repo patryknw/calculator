@@ -1,5 +1,5 @@
 <app-header></app-header>
-<app-nav></app-nav>
-<app-content></app-content>
+<app-nav (receiveTab)="content.switchTab($event)"></app-nav>
+<app-content #content></app-content>
 
 <router-outlet></router-outlet>

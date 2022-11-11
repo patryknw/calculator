@@ -1,4 +1,4 @@
-<div class="main" id="tab1">
+<div class="main" id="tab1" #tab1>
     <h1>Przelicznik kuchenny</h1>
     <div class="droplist"><app-droplist text="Produkt"></app-droplist></div>
     <div class="textbox-container">
@@ -18,7 +18,7 @@
     </div>
 </div>
 
-<div class="main" id="tab2">
+<div class="main" id="tab2" #tab2>
     <h1>Przelicznik jednostek</h1>
     <div class="textbox-container">
         <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
@@ -36,7 +36,7 @@
     </div>
 </div>
 
-<div class="main" id="tab3">
+<div class="main" id="tab3" #tab3>
     <h1>Przelicznik foremek</h1>
     <h2>Twoja foremka</h2>
     <div class="textbox-container">

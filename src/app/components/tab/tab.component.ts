@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tab',
@@ -10,11 +10,11 @@ export class TabComponent implements OnInit {
   @Input() highlighted!: boolean;
   @Input() color!: string;
   @Input() tab!: string;
+  @Output() tabClick = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
-    
   }
 
   setActive(){
@@ -25,9 +25,11 @@ export class TabComponent implements OnInit {
     this.highlighted = false;
   }
 
-  onClick(){
-    console.log(this.tab);
-    if(!this.highlighted) this.setActive();
+  onClick(event: any){
+    if(!this.highlighted){
+      this.tabClick.emit({ event:event, tab:this.tab });
+      this.setActive();
+    }
   }
 
 }
