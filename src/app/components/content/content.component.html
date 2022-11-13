@@ -19,17 +19,17 @@
 </div>
 
 <div class="main" id="tab2" #tab2>
-    <h1>Przelicznik jednostek</h1>
-    <div class="textbox-container">
-        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
-        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
-    </div>
-    <h1>Przelicznik jednostek</h1>
-    <div class="textbox-container">
-        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
-        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
-    </div>
     <h1>Przelicznik wag</h1>
+    <div class="textbox-container">
+        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+    </div>
+    <h1>Przelicznik pojemności</h1>
+    <div class="textbox-container">
+        <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+    </div>
+    <h1>Przelicznik temperatur</h1>
     <div class="textbox-container">
         <div class="textbox"><app-textbox text="stopnie Celsjusza"></app-textbox></div>
         <div class="textbox"><app-textbox text="stopnie Fahrenheita"></app-textbox></div>
@@ -40,19 +40,26 @@
     <h1>Przelicznik foremek</h1>
     <h2>Twoja foremka</h2>
     <div class="textbox-container">
+        <div class="textbox"><app-radio group="foremka1" text="blacha" [checked]=true (radioClick)="switchTrayType($event)"></app-radio></div>
+        <div class="textbox"><app-radio group="foremka1" text="tortownica" [checked]=false (radioClick)="switchTrayType($event)"></app-radio></div>
+    </div>
+    <div class="textbox-container" id="blacha1" #blacha1>
         <div class="textbox"><app-textbox text="długość"></app-textbox></div>
         <div class="textbox"><app-textbox text="szerokość"></app-textbox></div>
     </div>
-    <div class="textbox-container">
-        <div class="textbox"><app-radio group="foremka1" text="blacha"></app-radio></div>
-        <div class="textbox"><app-radio group="foremka1" text="tortownica"></app-radio></div>
+    <div class="textbox-container" id="tortownica1" #tortownica1 [ngStyle]="{'width': '50%'}">
+        <div class="textbox"><app-textbox text="średnica"></app-textbox></div>
     </div>
     <h2>Foremka z przepisu</h2>
     <div class="textbox-container">
-        <div class="textbox"><app-radio group="foremka2" text="blacha"></app-radio></div>
-        <div class="textbox"><app-radio group="foremka2" text="tortownica"></app-radio></div>
+        <div class="textbox"><app-radio group="foremka2" text="blacha" [checked]=false (radioClick)="switchTrayType($event)"></app-radio></div>
+        <div class="textbox"><app-radio group="foremka2" text="tortownica" [checked]=true (radioClick)="switchTrayType($event)"></app-radio></div>
     </div>
-    <div class="textbox-container" [ngStyle]="{'width': '50%'}">
+    <div class="textbox-container" id="blacha2" #blacha2>
+        <div class="textbox"><app-textbox text="długość"></app-textbox></div>
+        <div class="textbox"><app-textbox text="szerokość"></app-textbox></div>
+    </div>
+    <div class="textbox-container" id="tortownica2" #tortownica2 [ngStyle]="{'width': '50%'}">
         <div class="textbox"><app-textbox text="średnica"></app-textbox></div>
     </div>
     <h1>2.50</h1>

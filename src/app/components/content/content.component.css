@@ -1,6 +1,6 @@
 h1{
     font-family: 'canal-demi-plain';
-    font-size: 22px;
+    font-size: 20px;
     margin-top: 18px;
     margin-bottom: 18px;
 }
@@ -59,4 +59,20 @@ hr{
 
 #tab3{
     display: none;
+}
+
+#blacha1{
+    display: flex;
+}
+
+#blacha2{
+    display: none;
+}
+
+#tortownica1{
+    display: none;
+}
+
+#tortownica2{
+    display: flex;
 }

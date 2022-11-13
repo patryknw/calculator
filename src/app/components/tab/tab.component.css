@@ -1,8 +1,10 @@
 p{
     color: #ffffff;
-    font-family: 'canal-light-plain';
-    font-size: 13px;
+    font-family: 'canal-demi-plain';
+    font-size: 12px;
+    font-weight: 400;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .default{
@@ -13,6 +15,14 @@ p{
 .highlighted{
     color: #95c633;
     text-decoration: underline;
-    text-underline-offset: 22.5px;
-    text-decoration-thickness: 3px;
+    text-underline-offset: 23.5px;
+    text-decoration-thickness: 2px;
+}
+
+p:hover{
+    color: #95c633;
+    text-decoration: underline;
+    text-underline-offset: 23.5px;
+    text-decoration-color: #95c633;
+    text-decoration-thickness: 2px;
 }
