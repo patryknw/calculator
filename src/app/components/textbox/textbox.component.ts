@@ -16,6 +16,7 @@ export class TextboxComponent implements OnInit {
   }
 
   getNumber(event: any, number: string){
+    if(event.key === ".") return;
     this.emitNumber.emit({ event:event, number:number, text:this.text });
   }
 
