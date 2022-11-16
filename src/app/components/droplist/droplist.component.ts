@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import 'select2';
 
 @Component({
   selector: 'app-droplist',
@@ -11,6 +12,17 @@ export class DroplistComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    $('.js-example-basic-single').select2({
+      placeholder: this.text,
+      allowClear: true,
+      ajax: {
+        dataType: "json",
+        url: "assets/json/products.json"
+      }
+    });
   }
 
 }

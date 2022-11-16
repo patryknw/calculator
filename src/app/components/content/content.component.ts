@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { TextboxComponent } from '../textbox/textbox.component';
 
 @Component({
   selector: 'app-content',
@@ -13,6 +14,7 @@ export class ContentComponent implements OnInit {
   @ViewChild("blacha2") blacha2!: ElementRef;
   @ViewChild("tortownica1") tortownica1!: ElementRef;
   @ViewChild("tortownica2") tortownica2!: ElementRef;
+  @ViewChildren(TextboxComponent) textboxes!:QueryList<TextboxComponent>;
 
   constructor() { }
 
@@ -64,6 +66,42 @@ export class ContentComponent implements OnInit {
         blacha2.style.display = "none";
         tortownica2.style.display = "flex";
       }
+    }
+  }
+
+  convertUnits(event: any){
+    let number = parseFloat(event.number);
+    let elements: any[] = [];
+    let i = 0;
+
+    this.textboxes.forEach((element) => {
+      elements[i] = element;
+      i++;
+    });
+
+    switch(event.text){
+      case "mililitr":
+        elements[2].setNumber(number / 5);
+        elements[3].setNumber(number / 15);
+        elements[4].setNumber(number / 250);
+        break;
+      case "gram":
+        break;
+      case "łyżeczka":
+        elements[0].setNumber(number * 5);
+        elements[3].setNumber(number * 5 / 15);
+        elements[4].setNumber(number * 5 / 250);
+        break;
+      case "łyżka":
+        elements[0].setNumber(number * 15);
+        elements[2].setNumber(number * 15 / 5);
+        elements[4].setNumber(number * 15 / 250);
+        break;
+      case "szklanka":
+        elements[0].setNumber(number * 250);
+        elements[2].setNumber(number * 250 / 5);
+        elements[3].setNumber(number * 250 / 15);
+        break;
     }
   }
 

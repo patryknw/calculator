@@ -1,0 +1,123 @@
+{
+    "results": [
+      {
+        "id": 1,
+        "text": "Bułka tarta"
+      },
+      {
+        "id": 2,
+        "text": "Cukier"
+      },
+      {
+        "id": 3,
+        "text": "Cukier puder"
+      },
+      {
+        "id": 4,
+        "text": "Cukier waniliowy"
+      },
+      {
+        "id": 5,
+        "text": "Dżem"
+      },
+      {
+        "id": 6,
+        "text": "Kakao"
+      },
+      {
+        "id": 7,
+        "text": "Kasza manna"
+      },
+      {
+        "id": 8,
+        "text": "Kawa mielona"
+      },
+      {
+        "id": 9,
+        "text": "Mak"
+      },
+      {
+        "id": 10,
+        "text": "Masło / Margaryna"
+      },
+      {
+        "id": 11,
+        "text": "Mąka pszenna"
+      },
+      {
+        "id": 12,
+        "text": "Kasza manna"
+      },
+      {
+        "id": 13,
+        "text": "Mąka żytnia"
+      },
+      {
+        "id": 14,
+        "text": "Mąka ziemniaczana"
+      },
+      {
+        "id": 15,
+        "text": "Miód"
+      },
+      {
+        "id": 16,
+        "text": "Mleko"
+      },
+      {
+        "id": 17,
+        "text": "Mleko zagęszczone"
+      },
+      {
+        "id": 18,
+        "text": "Olej"
+      },
+      {
+        "id": 19,
+        "text": "Orzechy laskowe mielone"
+      },
+      {
+        "id": 20,
+        "text": "Płatki owsiane"
+      },
+      {
+        "id": 21,
+        "text": "Proszek do pieczenia"
+      },
+      {
+        "id": 22,
+        "text": "Rodzynki"
+      },
+      {
+        "id": 23,
+        "text": "Ryż"
+      },
+      {
+        "id": 24,
+        "text": "Soda oczyszczona"
+      },
+      {
+        "id": 25,
+        "text": "Sól"
+      },
+      {
+        "id": 26,
+        "text": "Śmietana 18%"
+      },
+      {
+        "id": 27,
+        "text": "Śmietana kremówka 30%"
+      },
+      {
+        "id": 28,
+        "text": "Woda / Wino"
+      },
+      {
+        "id": 29,
+        "text": "Żelatyna"
+      }
+    ],
+    "pagination": {
+      "more": false
+    }
+}

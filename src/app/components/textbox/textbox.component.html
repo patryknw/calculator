@@ -1,6 +1,6 @@
 <p>
   <label class="pure-material-textfield-standard">
-    <input type="number" placeholder=" " min="0" max="999999999">
+    <input type="number" placeholder=" " min="0" max="999999999" #textbox (keyup)="getNumber($event, textbox.value)">
     <span>{{ text }}</span>
   </label>
 </p>

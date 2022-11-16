@@ -2,13 +2,13 @@
     <h1>Przelicznik kuchenny</h1>
     <div class="droplist"><app-droplist text="Produkt"></app-droplist></div>
     <div class="textbox-container">
-        <div class="textbox"><app-textbox text="mililitr"></app-textbox></div>
-        <div class="textbox"><app-textbox text="gram"></app-textbox></div>
+        <div class="textbox"><app-textbox text="mililitr" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        <div class="textbox"><app-textbox text="gram" (emitNumber)="convertUnits($event)"></app-textbox></div>
     </div>
     <div class="textbox-container">
-        <div class="textbox"><app-textbox text="łyżeczka"></app-textbox></div>
-        <div class="textbox"><app-textbox text="łyżka"></app-textbox></div>
-        <div class="textbox"><app-textbox text="szklanka"></app-textbox></div>
+        <div class="textbox"><app-textbox text="łyżeczka" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        <div class="textbox"><app-textbox text="łyżka" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        <div class="textbox"><app-textbox text="szklanka" (emitNumber)="convertUnits($event)"></app-textbox></div>
     </div>
     <hr/>
     <div class="info">
@@ -22,12 +22,12 @@
     <h1>Przelicznik wag</h1>
     <div class="textbox-container">
         <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
-        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="Produkt"></app-droplist></div>
     </div>
     <h1>Przelicznik pojemności</h1>
     <div class="textbox-container">
         <div class="textbox" [ngStyle]="{'width': '50%'}"><app-textbox text="ilość"></app-textbox></div>
-        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="jednostka"></app-droplist></div>
+        <div class="droplist" [ngStyle]="{'width': '50%'}"><app-droplist text="Produkt"></app-droplist></div>
     </div>
     <h1>Przelicznik temperatur</h1>
     <div class="textbox-container">

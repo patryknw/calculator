@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-textbox',
@@ -7,10 +7,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TextboxComponent implements OnInit {
   @Input() text!: string;
+  @Output() emitNumber = new EventEmitter();
+  @ViewChild("textbox") textbox!: ElementRef;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getNumber(event: any, number: string){
+    this.emitNumber.emit({ event:event, number:number, text:this.text });
+  }
+
+  setNumber(number: number){
+    let numberRounded = Math.round(number * 100) / 100;
+    this.textbox.nativeElement.value = numberRounded;
   }
 
 }
