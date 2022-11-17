@@ -14,6 +14,8 @@ export class ContentComponent implements OnInit {
   @ViewChild("blacha2") blacha2!: ElementRef;
   @ViewChild("tortownica1") tortownica1!: ElementRef;
   @ViewChild("tortownica2") tortownica2!: ElementRef;
+  @ViewChild("ratio") ratio!: ElementRef;
+  @ViewChild("ratio_long") ratio_long!: ElementRef;
   @ViewChildren(TextboxComponent) textboxes!:QueryList<TextboxComponent>;
 
   constructor() { }
@@ -74,12 +76,19 @@ export class ContentComponent implements OnInit {
     let elements: any[] = [];
     let i = 0;
 
+    let ratio = this.ratio.nativeElement;
+    let ratio_long = this.ratio_long.nativeElement;
+
+    let ratioNumber!: number;
+    let myTraySize!: number;
+    let recipeTraySize!: number;
+
     this.textboxes.forEach((element) => {
       elements[i] = element;
       i++;
     });
 
-    switch(event.text){
+    switch(event.id){
       case "mililitr":
         elements[2].setNumber(number / 5);
         elements[3].setNumber(number / 15);
@@ -87,12 +96,12 @@ export class ContentComponent implements OnInit {
         break;
       case "gram":
         break;
-      case "łyżeczka":
+      case "lyzeczka":
         elements[0].setNumber(number * 5);
         elements[3].setNumber(number * 5 / 15);
         elements[4].setNumber(number * 5 / 250);
         break;
-      case "łyżka":
+      case "lyzka":
         elements[0].setNumber(number * 15);
         elements[2].setNumber(number * 15 / 5);
         elements[4].setNumber(number * 15 / 250);
@@ -102,6 +111,61 @@ export class ContentComponent implements OnInit {
         elements[2].setNumber(number * 250 / 5);
         elements[3].setNumber(number * 250 / 15);
         break;
+
+      case "ilosc1":
+        break;
+      case "ilosc2":
+        break;
+      case "celsjusz":
+        elements[10].setNumber(number * 1.8 + 32);
+        break;
+      case "fahrenheit":
+        elements[9].setNumber((number - 32) * 0.5556);
+        break;
+
+      case "blacha1_dlugosc":
+        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
+        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+        ratioNumber = myTraySize / recipeTraySize;
+        //this.ratio.nativeElement.textContent = ratioNumber;
+        break;
+      case "blacha1_szerokosc":
+        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
+        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+        ratioNumber = myTraySize / recipeTraySize;
+        //this.ratio.nativeElement.textContent = ratioNumber;
+        break;
+      case "tortownica1_srednica":
+        break;
+      case "blacha2_dlugosc":
+        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
+        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+        ratioNumber = myTraySize / recipeTraySize;
+        //this.ratio.nativeElement.textContent = ratioNumber;
+        break;
+      case "blacha2_szerokosc":
+        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
+        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+        ratioNumber = myTraySize / recipeTraySize;
+        //this.ratio.nativeElement.textContent = ratioNumber;
+        break;
+      case "tortownica2_srednica":
+        break;
+    }
+
+    ratioNumber = Math.round(ratioNumber * 100) / 100;
+    if(!isNaN(ratioNumber)){
+      ratio.textContent = ratioNumber;
+      if(ratioNumber > 1){
+        ratio_long.textContent = `Do foremki powinieneś dodać ${ratioNumber} razy więcej składników, niż w przepisie.`;
+      }
+      else if(ratioNumber < 1){
+        ratioNumber = recipeTraySize / myTraySize;
+        ratio_long.textContent = `Do foremki powinieneś dodać ${ratioNumber} razy mniej składników, niż w przepisie.`;
+      }
+      else if(ratioNumber == 1){
+        ratio_long.textContent = `Do foremki powinieneś dodać taką samą ilość składników, jak w przepisie.`;
+      }
     }
   }
 

@@ -14,7 +14,7 @@ export class DroplistComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  ngAfterViewInit(){
+  /*ngAfterViewInit(){
     $('.js-example-basic-single').select2({
       placeholder: this.text,
       allowClear: true,
@@ -23,6 +23,6 @@ export class DroplistComponent implements OnInit {
         url: "assets/json/products.json"
       }
     });
-  }
+  }*/
 
 }
