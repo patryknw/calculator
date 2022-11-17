@@ -18,6 +18,9 @@ export class ContentComponent implements OnInit {
   @ViewChild("ratio_long") ratio_long!: ElementRef;
   @ViewChildren(TextboxComponent) textboxes!:QueryList<TextboxComponent>;
 
+  activeTab1: string = "blacha";
+  activeTab2: string = "tortownica";
+
   constructor() { }
 
   ngOnInit(): void {
@@ -55,18 +58,22 @@ export class ContentComponent implements OnInit {
       if(event.text == "blacha"){
         blacha1.style.display = "flex";
         tortownica1.style.display = "none";
+        this.activeTab1 = "blacha";
       } else if(event.text == "tortownica"){
         blacha1.style.display = "none";
         tortownica1.style.display = "flex";
+        this.activeTab1 = "tortownica";
       }
     }
     else if(event.group == "foremka2"){
       if(event.text == "blacha"){
         blacha2.style.display = "flex";
         tortownica2.style.display = "none";
+        this.activeTab2 = "blacha";
       } else if(event.text == "tortownica"){
         blacha2.style.display = "none";
         tortownica2.style.display = "flex";
+        this.activeTab2 = "tortownica";
       }
     }
   }
@@ -123,48 +130,57 @@ export class ContentComponent implements OnInit {
         elements[9].setNumber((number - 32) * 0.5556);
         break;
 
-      case "blacha1_dlugosc":
-        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
-        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+      function calculateRatioNumber(activeTab1: string, activeTab2: string){
+        if(activeTab1 == "blacha"){
+          myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
+        }
+        else if(activeTab1 == "tortownica"){
+          myTraySize = Math.PI * Math.pow((elements[13].returnNumber() / 2), 2);
+        }
+        if(activeTab2 == "blacha"){
+          recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
+        }
+        else if(activeTab2 == "tortownica"){
+          recipeTraySize = Math.PI * Math.pow((elements[16].returnNumber() / 2), 2);
+        }
+
         ratioNumber = myTraySize / recipeTraySize;
-        //this.ratio.nativeElement.textContent = ratioNumber;
+      }
+
+      case "blacha1_dlugosc":
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
       case "blacha1_szerokosc":
-        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
-        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
-        ratioNumber = myTraySize / recipeTraySize;
-        //this.ratio.nativeElement.textContent = ratioNumber;
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
       case "tortownica1_srednica":
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
       case "blacha2_dlugosc":
-        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
-        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
-        ratioNumber = myTraySize / recipeTraySize;
-        //this.ratio.nativeElement.textContent = ratioNumber;
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
       case "blacha2_szerokosc":
-        myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
-        recipeTraySize = elements[14].returnNumber() * elements[15].returnNumber();
-        ratioNumber = myTraySize / recipeTraySize;
-        //this.ratio.nativeElement.textContent = ratioNumber;
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
       case "tortownica2_srednica":
+        calculateRatioNumber(this.activeTab1, this.activeTab2);
         break;
     }
 
     ratioNumber = Math.round(ratioNumber * 100) / 100;
     if(!isNaN(ratioNumber)){
-      ratio.textContent = ratioNumber;
       if(ratioNumber > 1){
-        ratio_long.textContent = `Do foremki powinieneś dodać ${ratioNumber} razy więcej składników, niż w przepisie.`;
+      ratio.textContent = `${ratioNumber} razy więcej`;
+      ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy więcej składników, niż w przepisie.`;
       }
       else if(ratioNumber < 1){
-        ratioNumber = recipeTraySize / myTraySize;
-        ratio_long.textContent = `Do foremki powinieneś dodać ${ratioNumber} razy mniej składników, niż w przepisie.`;
+      ratioNumber = Math.round((recipeTraySize / myTraySize) * 100) / 100;
+      ratio.textContent = `${ratioNumber} razy mniej`;
+      ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy mniej składników, niż w przepisie.`;
       }
       else if(ratioNumber == 1){
-        ratio_long.textContent = `Do foremki powinieneś dodać taką samą ilość składników, jak w przepisie.`;
+      ratio.textContent = `${ratioNumber}`;
+      ratio_long.textContent = `Do foremki powinieneś włożyć taką samą liczbę składników, jak w przepisie.`;
       }
     }
   }

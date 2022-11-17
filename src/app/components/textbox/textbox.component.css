@@ -10,3 +10,7 @@ label:hover{
 label:focus{
     background-color: #ececec;
 }
+
+.text, .input{
+    padding-left: 6px;
+}

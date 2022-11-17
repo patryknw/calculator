@@ -15,8 +15,8 @@ h2{
 hr{
     border: none;
     height: 1px;
-    margin-top: 20px;
-    margin-bottom: 12px;
+    margin-top: 26px;
+    margin-bottom: 10px;
     background-color: #626262;
 }
 
@@ -52,10 +52,13 @@ hr{
 .ratio{
     font-family: "canal-demi-plain";
     font-size: 20px;
+    margin-top: 14px;
+    margin-bottom: 4px;
 }
 
 .ratio_long{
     font-size: 14px;
+    margin: 0;
 }
 
 #tab1{
