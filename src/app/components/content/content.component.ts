@@ -20,10 +20,19 @@ export class ContentComponent implements OnInit {
 
   activeTab1: string = "blacha";
   activeTab2: string = "tortownica";
+  elements: any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(){
+    let i = 0;
+    this.textboxes.forEach((element) => {
+      this.elements[i] = element;
+      i++;
+    });
   }
 
   switchTab(event: any){
@@ -59,10 +68,12 @@ export class ContentComponent implements OnInit {
         blacha1.style.display = "flex";
         tortownica1.style.display = "none";
         this.activeTab1 = "blacha";
+        this.convertUnits(undefined, "blacha1_dlugosc", this.elements[11].returnNumber());
       } else if(event.text == "tortownica"){
         blacha1.style.display = "none";
         tortownica1.style.display = "flex";
         this.activeTab1 = "tortownica";
+        this.convertUnits(undefined, "tortownica1_srednica", this.elements[13].returnNumber());
       }
     }
     else if(event.group == "foremka2"){
@@ -70,18 +81,28 @@ export class ContentComponent implements OnInit {
         blacha2.style.display = "flex";
         tortownica2.style.display = "none";
         this.activeTab2 = "blacha";
+        this.convertUnits(undefined, "blacha2_dlugosc", this.elements[14].returnNumber());
       } else if(event.text == "tortownica"){
         blacha2.style.display = "none";
         tortownica2.style.display = "flex";
         this.activeTab2 = "tortownica";
+        this.convertUnits(undefined, "tortownica2_srednica", this.elements[16].returnNumber());
       }
     }
   }
 
-  convertUnits(event: any){
-    let number = parseFloat(event.number);
-    let elements: any[] = [];
-    let i = 0;
+  convertUnits(event?: any, idExternal?: any, numberExternal?: number){
+    let number, id;
+
+    if(event === undefined){
+      number = numberExternal;
+      id = idExternal;
+    } else{
+      number = event.number;
+      id = event.id;
+    }
+
+    number = parseFloat(number);
 
     let ratio = this.ratio.nativeElement;
     let ratio_long = this.ratio_long.nativeElement;
@@ -90,33 +111,28 @@ export class ContentComponent implements OnInit {
     let myTraySize!: number;
     let recipeTraySize!: number;
 
-    this.textboxes.forEach((element) => {
-      elements[i] = element;
-      i++;
-    });
-
-    switch(event.id){
+    switch(id){
       case "mililitr":
-        elements[2].setNumber(number / 5);
-        elements[3].setNumber(number / 15);
-        elements[4].setNumber(number / 250);
+        this.elements[2].setNumber(number / 5);
+        this.elements[3].setNumber(number / 15);
+        this.elements[4].setNumber(number / 250);
         break;
       case "gram":
         break;
       case "lyzeczka":
-        elements[0].setNumber(number * 5);
-        elements[3].setNumber(number * 5 / 15);
-        elements[4].setNumber(number * 5 / 250);
+        this.elements[0].setNumber(number * 5);
+        this.elements[3].setNumber(number * 5 / 15);
+        this.elements[4].setNumber(number * 5 / 250);
         break;
       case "lyzka":
-        elements[0].setNumber(number * 15);
-        elements[2].setNumber(number * 15 / 5);
-        elements[4].setNumber(number * 15 / 250);
+        this.elements[0].setNumber(number * 15);
+        this.elements[2].setNumber(number * 15 / 5);
+        this.elements[4].setNumber(number * 15 / 250);
         break;
       case "szklanka":
-        elements[0].setNumber(number * 250);
-        elements[2].setNumber(number * 250 / 5);
-        elements[3].setNumber(number * 250 / 15);
+        this.elements[0].setNumber(number * 250);
+        this.elements[2].setNumber(number * 250 / 5);
+        this.elements[3].setNumber(number * 250 / 15);
         break;
 
       case "ilosc1":
@@ -124,13 +140,13 @@ export class ContentComponent implements OnInit {
       case "ilosc2":
         break;
       case "celsjusz":
-        elements[10].setNumber(number * 1.8 + 32);
+        this.elements[10].setNumber(number * 1.8 + 32);
         break;
       case "fahrenheit":
-        elements[9].setNumber((number - 32) * 0.5556);
+        this.elements[9].setNumber((number - 32) * 0.5556);
         break;
 
-      function calculateRatioNumber(activeTab1: string, activeTab2: string){
+      function calculateRatioNumber(activeTab1: string, activeTab2: string, elements: any){
         if(activeTab1 == "blacha"){
           myTraySize = elements[11].returnNumber() * elements[12].returnNumber();
         }
@@ -148,39 +164,39 @@ export class ContentComponent implements OnInit {
       }
 
       case "blacha1_dlugosc":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
       case "blacha1_szerokosc":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
       case "tortownica1_srednica":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
       case "blacha2_dlugosc":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
       case "blacha2_szerokosc":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
       case "tortownica2_srednica":
-        calculateRatioNumber(this.activeTab1, this.activeTab2);
+        calculateRatioNumber(this.activeTab1, this.activeTab2, this.elements);
         break;
     }
 
     ratioNumber = Math.round(ratioNumber * 100) / 100;
     if(!isNaN(ratioNumber)){
       if(ratioNumber > 1){
-      ratio.textContent = `${ratioNumber} razy więcej`;
-      ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy więcej składników, niż w przepisie.`;
+        ratio.textContent = `${ratioNumber} razy więcej`;
+        ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy więcej składników, niż w przepisie.`;
       }
       else if(ratioNumber < 1){
-      ratioNumber = Math.round((recipeTraySize / myTraySize) * 100) / 100;
-      ratio.textContent = `${ratioNumber} razy mniej`;
-      ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy mniej składników, niż w przepisie.`;
+        ratioNumber = Math.round((recipeTraySize / myTraySize) * 100) / 100;
+        ratio.textContent = `${ratioNumber} razy mniej`;
+        ratio_long.textContent = `Do foremki powinieneś włożyć ${ratioNumber} razy mniej składników, niż w przepisie.`;
       }
       else if(ratioNumber == 1){
-      ratio.textContent = `${ratioNumber}`;
-      ratio_long.textContent = `Do foremki powinieneś włożyć taką samą liczbę składników, jak w przepisie.`;
+        ratio.textContent = `${ratioNumber}`;
+        ratio_long.textContent = `Do foremki powinieneś włożyć taką samą liczbę składników, jak w przepisie.`;
       }
     }
   }
