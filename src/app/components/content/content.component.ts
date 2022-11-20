@@ -114,23 +114,16 @@ export class ContentComponent implements OnInit {
 
     switch(id){
       case "mililitr":
+        this.elements[2].setNumber(number / 5);
+        this.elements[3].setNumber(number / 15);
+        this.elements[4].setNumber(number / 250);
         if(this.selectedItem !== undefined){
-          var toGrams = number / this.selectedItem.oneUnitInMillilitres;
-          var toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
-          this.elements[1].setNumber(toGrams);
-          this.elements[2].setNumber(toMillilitres / 5);
-          this.elements[3].setNumber(toMillilitres / 15);
-          this.elements[4].setNumber(toMillilitres / 250);
-        }
-        else{
-          this.elements[2].setNumber(number / 5);
-          this.elements[3].setNumber(number / 15);
-          this.elements[4].setNumber(number / 250);
+          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres);
         }
         break;
       case "gram":
         if(this.selectedItem === undefined) return;
-        var toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
+        let toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
         this.elements[0].setNumber(toMillilitres);
         this.elements[2].setNumber(toMillilitres / 5);
         this.elements[3].setNumber(toMillilitres / 15);
@@ -140,16 +133,25 @@ export class ContentComponent implements OnInit {
         this.elements[0].setNumber(number * 5);
         this.elements[3].setNumber(number * 5 / 15);
         this.elements[4].setNumber(number * 5 / 250);
+        if(this.selectedItem !== undefined){
+          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 5);
+        }
         break;
       case "lyzka":
         this.elements[0].setNumber(number * 15);
         this.elements[2].setNumber(number * 15 / 5);
         this.elements[4].setNumber(number * 15 / 250);
+        if(this.selectedItem !== undefined){
+          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 15);
+        }
         break;
       case "szklanka":
         this.elements[0].setNumber(number * 250);
         this.elements[2].setNumber(number * 250 / 5);
         this.elements[3].setNumber(number * 250 / 15);
+        if(this.selectedItem !== undefined){
+          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 250);
+        }
         break;
 
       case "ilosc1":
@@ -220,6 +222,9 @@ export class ContentComponent implements OnInit {
 
   setChoiceValue(event: any){
     this.selectedItem = event.choice;
+    if(this.elements[0].returnNumber() !== undefined){
+      this.convertUnits(undefined, "mililitr", this.elements[0].returnNumber());
+    }
   }
 
 }
