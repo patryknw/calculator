@@ -5,6 +5,7 @@ p{
     font-weight: 400;
     text-decoration: none;
     cursor: pointer;
+    margin: 0;
 }
 
 .default{
@@ -19,10 +20,19 @@ p{
     text-decoration-thickness: 2px;
 }
 
-p:hover{
+.element:hover > p{
     color: #95c633;
     text-decoration: underline;
     text-underline-offset: 23.5px;
     text-decoration-color: #95c633;
     text-decoration-thickness: 2px;
+}
+
+.element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 175%;
+    cursor: pointer;
 }
