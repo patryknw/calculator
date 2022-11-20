@@ -1,9 +1,1 @@
-<!--
-<div class="select2">
-  <select class="js-example-basic-single"></select>
-</div>
--->
-
-<select ng-options="selected.text for selected in vm.product" ng-model="vm.customProduct">
-  <option value="" disabled>Produkt</option>
-</select>
+<ng-select [items]="droplistType" bindLabel="name" placeholder="{{ text }}" [(ngModel)]="selected" class="custom" (close)="getChoice($event)"></ng-select>

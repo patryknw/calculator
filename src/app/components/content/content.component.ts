@@ -21,6 +21,7 @@ export class ContentComponent implements OnInit {
   activeTab1: string = "blacha";
   activeTab2: string = "tortownica";
   elements: any[] = [];
+  selectedItem!: any;
 
   constructor() { }
 
@@ -113,11 +114,27 @@ export class ContentComponent implements OnInit {
 
     switch(id){
       case "mililitr":
-        this.elements[2].setNumber(number / 5);
-        this.elements[3].setNumber(number / 15);
-        this.elements[4].setNumber(number / 250);
+        if(this.selectedItem !== undefined){
+          var toGrams = number / this.selectedItem.oneUnitInMillilitres;
+          var toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
+          this.elements[1].setNumber(toGrams);
+          this.elements[2].setNumber(toMillilitres / 5);
+          this.elements[3].setNumber(toMillilitres / 15);
+          this.elements[4].setNumber(toMillilitres / 250);
+        }
+        else{
+          this.elements[2].setNumber(number / 5);
+          this.elements[3].setNumber(number / 15);
+          this.elements[4].setNumber(number / 250);
+        }
         break;
       case "gram":
+        if(this.selectedItem === undefined) return;
+        var toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
+        this.elements[0].setNumber(toMillilitres);
+        this.elements[2].setNumber(toMillilitres / 5);
+        this.elements[3].setNumber(toMillilitres / 15);
+        this.elements[4].setNumber(toMillilitres / 250);
         break;
       case "lyzeczka":
         this.elements[0].setNumber(number * 5);
@@ -199,6 +216,10 @@ export class ContentComponent implements OnInit {
         ratio_long.textContent = `Do foremki powinieneś włożyć taką samą liczbę składników, jak w przepisie.`;
       }
     }
+  }
+
+  setChoiceValue(event: any){
+    this.selectedItem = event.choice;
   }
 
 }

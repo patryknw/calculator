@@ -1,30 +1,32 @@
-@font-face {
+@import "~@ng-select/ng-select/themes/material.theme.css";
+
+@font-face{
     font-family: canal-light-plain;
     src: url(assets/fonts/CanalLightPlain.otf);
 }
 
-@font-face {
+@font-face{
     font-family: canal-demi-plain;
     src: url(assets/fonts/CanalDemiPlain.otf);
 }
 
-@font-face {
+@font-face{
     font-family: canal-bold-plain;
     src: url(assets/fonts/CanalBoldPlain.otf);
 }
 
-* {
+*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'canal-light-plain';
 }
 
-/* Textbox input styling */
-
 .no-margin{
     margin: 0;
 }
+
+/* Textbox input styling */
 
 .pure-material-textfield-standard {
     position: relative;
@@ -130,95 +132,80 @@
 
 /* Select input styling */
 
-.select {
-    position: relative;
-}
-  
-.select-text {
-    position: relative;
-    background-color: #f5f5f5;
-    padding: 20px 10px 10px 0;
-    font-size: 16px;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(0,0,0, 0.6);
+.ng-select.ng-select-focused .ng-select-container:after{
+    border-color: #95c633;
+    border-width: 2px;
 }
 
-.select-text:focus {
-    outline: none;
-    border-bottom: 1px solid rgba(0,0,0, 0);
+.ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:after, .ng-select.ng-select-focused .ng-select-container.ng-appearance-outline:hover:after{
+    border-color: #95c633;
+    border-width: 2px;
 }
 
-.select .select-text {
-    appearance: none;
-    -webkit-appearance:none
-}
-
-.select:after {
-    position: absolute;
-    top: 18px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    padding: 0;
-    content: '';
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid rgba(0, 0, 0, 0.6);
-    pointer-events: none;
-}
-
-.select-label {
-    color: rgba(0,0,0, 0.6);
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 0;
-    top: 14px;
-    transition: 0.2s ease all;
-}
-
-.select-text:focus ~ .select-label, .select-text:valid ~ .select-label {
+.ng-select.ng-select-focused .ng-select-container .ng-value-container .ng-placeholder{
+    transform: translateY(-0.99em) scale(0.7) translateZ(0.001px);
     color: #95c633;
-    top: 0;
-    transition: 0.2s ease all;
-    font-size: 14px;
 }
 
-.select-bar {
-    position: relative;
-    display: block;
+.ng-select .ng-has-value .ng-placeholder,.ng-select.ng-select-opened .ng-placeholder{
+    transform:translateY(-0.99em) scale(0.7) translateZ(0.001px)
 }
 
-.select-bar:before, .select-bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
+.ng-select.ng-select-focused .ng-select-container .ng-arrow-wrapper .ng-arrow{
+    color: #95c633;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-optgroup.ng-option-selected{
+    background: rgba(0,0,0,0.12);
+    color: #95c633;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-selected{
+    background:rgba(0, 0, 0, 0.07);
+    color: #95c633;
+}
+
+.ng-select .ng-select-container{
+    color: rgba(0, 0, 0, 0.87);
+    align-items: baseline;
+    min-height: 51.5px;
+    background-color: #f5f5f5;
+    padding-left: 6px;
+    height: 56px;
+}
+
+.ng-select .ng-arrow-wrapper{
+    bottom: 2px;
+    padding-right: 6px;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-input{
+    padding-left: 6px;
+    bottom: .4375em;
+}
+
+.ng-select .ng-select-container .ng-value-container .ng-placeholder{
     position: absolute;
-    background: #95c633;
-    transition: 0.2s ease all;
+    color: rgba(0, 0, 0, 0.54);
+    transform-origin: left 0;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding-top: 4px;
 }
 
-.select-bar:before {
-    left: 50%;
-}
-
-.select-bar:after {
-    right: 50%;
-}
-
-.select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {
-    width: 50%;
-}
-
-.select-highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
+.ng-select .ng-select-container:after{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    content: "";
+    bottom: 0;
     left: 0;
-    pointer-events: none;
-    opacity: 0.5;
+    right: 0;
+    position: absolute;
+    transition: border-color 0.2s cubic-bezier(0.55, 0, 0.55, 0.2);
+}
+
+.ng-value{
+    transform: translate(0, 4px);
+}
+
+.ng-select {
+    padding-bottom: 0;
 }
