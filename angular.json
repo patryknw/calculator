@@ -24,12 +24,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/select2/dist/css/select2.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/select2/dist/js/select2.min.js"
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           },
           "configurations": {
@@ -96,12 +94,10 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "node_modules/select2/dist/css/select2.min.css",
               "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/select2/dist/js/select2.min.js"
+              "node_modules/jquery/dist/jquery.min.js"
             ]
           }
         }
