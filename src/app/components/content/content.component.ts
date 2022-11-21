@@ -112,7 +112,6 @@ export class ContentComponent implements OnInit {
 
     let ratio = this.ratio.nativeElement;
     let ratio_long = this.ratio_long.nativeElement;
-
     let ratioNumber!: number;
     let myTraySize!: number;
     let recipeTraySize!: number;
@@ -123,12 +122,12 @@ export class ContentComponent implements OnInit {
         this.elements[3].setNumber(number / 15);
         this.elements[4].setNumber(number / 250);
         if(this.selectedProduct !== undefined){
-          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres);
+          this.elements[1].setNumber(number / this.selectedProduct.oneGramInMillilitres);
         }
         break;
       case "gram":
         if(this.selectedProduct === undefined) return;
-        let toMillilitres = number * this.selectedProduct.oneUnitInMillilitres;
+        let toMillilitres = number * this.selectedProduct.oneGramInMillilitres;
         this.elements[0].setNumber(toMillilitres);
         this.elements[2].setNumber(toMillilitres / 5);
         this.elements[3].setNumber(toMillilitres / 15);
@@ -139,7 +138,7 @@ export class ContentComponent implements OnInit {
         this.elements[3].setNumber(number * 5 / 15);
         this.elements[4].setNumber(number * 5 / 250);
         if(this.selectedProduct !== undefined){
-          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 5);
+          this.elements[1].setNumber(number / this.selectedProduct.oneGramInMillilitres * 5);
         }
         break;
       case "lyzka":
@@ -147,7 +146,7 @@ export class ContentComponent implements OnInit {
         this.elements[2].setNumber(number * 15 / 5);
         this.elements[4].setNumber(number * 15 / 250);
         if(this.selectedProduct !== undefined){
-          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 15);
+          this.elements[1].setNumber(number / this.selectedProduct.oneGramInMillilitres * 15);
         }
         break;
       case "szklanka":
@@ -155,7 +154,7 @@ export class ContentComponent implements OnInit {
         this.elements[2].setNumber(number * 250 / 5);
         this.elements[3].setNumber(number * 250 / 15);
         if(this.selectedProduct !== undefined){
-          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 250);
+          this.elements[1].setNumber(number / this.selectedProduct.oneGramInMillilitres * 250);
         }
         break;
 

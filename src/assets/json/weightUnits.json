@@ -1,0 +1,44 @@
+{
+  "weightUnits": [
+    {
+      "id": 1,
+      "name": "miligram",
+      "oneUnitInGrams": 0.001
+    },
+    {
+      "id": 2,
+      "name": "gram",
+      "oneUnitInGrams": 1
+    },
+    {
+      "id": 3,
+      "name": "dekagram",
+      "oneUnitInGrams": 10
+    },
+    {
+      "id": 4,
+      "name": "kilogram",
+      "oneUnitInGrams": 1000
+    },
+    {
+      "id": 5,
+      "name": "uncja (oz)",
+      "oneUnitInGrams": 28.3495
+    },
+    {
+      "id": 6,
+      "name": "funt (lb)",
+      "oneUnitInGrams": 453.592
+    },
+    {
+      "id": 7,
+      "name": "peck (US dry) (pk)",
+      "oneUnitInGrams": 8809.7676
+    },
+    {
+      "id": 8,
+      "name": "kwarta (US dry) (qt)",
+      "oneUnitInGrams": 1101.22095
+    }
+  ]
+}

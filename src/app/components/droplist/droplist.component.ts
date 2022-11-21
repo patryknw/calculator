@@ -15,9 +15,9 @@ export class DroplistComponent implements OnInit {
   public selected!: number;
 
   public products = [
-    { id: 1, name: "Mąka", oneUnitInMillilitres: 1.9 },
-    { id: 2, name: "Miód", oneUnitInMillilitres: 0.7 },
-    { id: 3, name: "Cukier", oneUnitInMillilitres: 1.2 }
+    { id: 1, name: "Mąka", oneGramInMillilitres: 1.9 },
+    { id: 2, name: "Miód", oneGramInMillilitres: 0.7 },
+    { id: 3, name: "Cukier", oneGramInMillilitres: 1.2 }
   ];
 
   public weightUnits = [
