@@ -21,7 +21,12 @@ export class ContentComponent implements OnInit {
   activeTab1: string = "blacha";
   activeTab2: string = "tortownica";
   elements: any[] = [];
-  selectedItem!: any;
+
+  selectedProduct!: any;
+  selectedWeightUnit1!: any;
+  selectedWeightUnit2!: any;
+  selectedVolumeUnit1!: any;
+  selectedVolumeUnit2!: any;
 
   constructor() { }
 
@@ -117,13 +122,13 @@ export class ContentComponent implements OnInit {
         this.elements[2].setNumber(number / 5);
         this.elements[3].setNumber(number / 15);
         this.elements[4].setNumber(number / 250);
-        if(this.selectedItem !== undefined){
-          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres);
+        if(this.selectedProduct !== undefined){
+          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres);
         }
         break;
       case "gram":
-        if(this.selectedItem === undefined) return;
-        let toMillilitres = number * this.selectedItem.oneUnitInMillilitres;
+        if(this.selectedProduct === undefined) return;
+        let toMillilitres = number * this.selectedProduct.oneUnitInMillilitres;
         this.elements[0].setNumber(toMillilitres);
         this.elements[2].setNumber(toMillilitres / 5);
         this.elements[3].setNumber(toMillilitres / 15);
@@ -133,30 +138,42 @@ export class ContentComponent implements OnInit {
         this.elements[0].setNumber(number * 5);
         this.elements[3].setNumber(number * 5 / 15);
         this.elements[4].setNumber(number * 5 / 250);
-        if(this.selectedItem !== undefined){
-          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 5);
+        if(this.selectedProduct !== undefined){
+          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 5);
         }
         break;
       case "lyzka":
         this.elements[0].setNumber(number * 15);
         this.elements[2].setNumber(number * 15 / 5);
         this.elements[4].setNumber(number * 15 / 250);
-        if(this.selectedItem !== undefined){
-          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 15);
+        if(this.selectedProduct !== undefined){
+          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 15);
         }
         break;
       case "szklanka":
         this.elements[0].setNumber(number * 250);
         this.elements[2].setNumber(number * 250 / 5);
         this.elements[3].setNumber(number * 250 / 15);
-        if(this.selectedItem !== undefined){
-          this.elements[1].setNumber(number / this.selectedItem.oneUnitInMillilitres * 250);
+        if(this.selectedProduct !== undefined){
+          this.elements[1].setNumber(number / this.selectedProduct.oneUnitInMillilitres * 250);
         }
         break;
 
       case "ilosc1":
+        if(this.selectedWeightUnit1 === undefined || this.selectedWeightUnit2 === undefined) return;
+        this.elements[6].setNumber(number * this.selectedWeightUnit1.oneUnitInGrams / this.selectedWeightUnit2.oneUnitInGrams);
         break;
       case "ilosc2":
+        if(this.selectedWeightUnit1 === undefined || this.selectedWeightUnit2 === undefined) return;
+        this.elements[5].setNumber(number * this.selectedWeightUnit2.oneUnitInGrams / this.selectedWeightUnit1.oneUnitInGrams);
+        break;
+      case "ilosc3":
+        if(this.selectedVolumeUnit1 === undefined || this.selectedVolumeUnit2 === undefined) return;
+        this.elements[8].setNumber(number * this.selectedVolumeUnit1.oneUnitInMillilitres / this.selectedVolumeUnit2.oneUnitInMillilitres);
+        break;
+      case "ilosc4":
+        if(this.selectedVolumeUnit1 === undefined || this.selectedVolumeUnit2 === undefined) return;
+        this.elements[7].setNumber(number * this.selectedVolumeUnit2.oneUnitInMillilitres / this.selectedVolumeUnit1.oneUnitInMillilitres);
         break;
       case "celsjusz":
         this.elements[10].setNumber(number * 1.8 + 32);
@@ -221,9 +238,31 @@ export class ContentComponent implements OnInit {
   }
 
   setChoiceValue(event: any){
-    this.selectedItem = event.choice;
-    if(this.elements[0].returnNumber() !== undefined){
-      this.convertUnits(undefined, "mililitr", this.elements[0].returnNumber());
+    switch(event.id){
+      case "products":
+        this.selectedProduct = event.selected;
+        if(!isNaN(this.elements[0].returnNumber())){
+          this.convertUnits(undefined, "mililitr", this.elements[0].returnNumber());
+        } else if(!isNaN(this.elements[1].returnNumber())){
+          this.convertUnits(undefined, "gram", this.elements[1].returnNumber());
+        }
+        break;
+      case "weightUnits1":
+        this.selectedWeightUnit1 = event.selected;
+        this.convertUnits(undefined, "ilosc1", this.elements[5].returnNumber());
+        break;
+      case "weightUnits2":
+        this.selectedWeightUnit2 = event.selected;
+        this.convertUnits(undefined, "ilosc1", this.elements[5].returnNumber());
+        break;
+      case "volumeUnits1":
+        this.selectedVolumeUnit1 = event.selected;
+        this.convertUnits(undefined, "ilosc3", this.elements[7].returnNumber());
+        break;
+      case "volumeUnits2":
+        this.selectedVolumeUnit2 = event.selected;
+        this.convertUnits(undefined, "ilosc3", this.elements[7].returnNumber());
+        break;
     }
   }
 

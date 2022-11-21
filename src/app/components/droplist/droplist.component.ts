@@ -8,9 +8,10 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class DroplistComponent implements OnInit {
   @Input() text!: string;
   @Input() type!: string;
+  @Input() id!: string;
   @Output() emitChoice = new EventEmitter();
 
-  public droplistType!: any;
+  public droplistItems!: any;
   public selected!: number;
 
   public products = [
@@ -23,7 +24,7 @@ export class DroplistComponent implements OnInit {
     { id: 1, name: "miligram", oneUnitInGrams: 0.001 },
     { id: 2, name: "gram", oneUnitInGrams: 1 },
     { id: 3, name: "dekagram", oneUnitInGrams: 10 },
-    { id: 4, name: "kilogram", oneUnitInGrams: 100 },
+    { id: 4, name: "kilogram", oneUnitInGrams: 1000 },
     { id: 5, name: "uncja (oz)", oneUnitInGrams: 28.3495 },
     { id: 6, name: "funt (lb)", oneUnitInGrams: 453.592 },
     { id: 7, name: "peck (US dry) (pk)", oneUnitInGrams: 8809.7676 },
@@ -48,19 +49,19 @@ export class DroplistComponent implements OnInit {
   ngOnInit(): void {
     switch(this.type){
       case "products":
-        this.droplistType = this.products;
+        this.droplistItems = this.products;
         break;
       case "weightUnits":
-        this.droplistType = this.weightUnits;
+        this.droplistItems = this.weightUnits;
         break;
       case "volumeUnits":
-        this.droplistType = this.volumeUnits;
+        this.droplistItems = this.volumeUnits;
         break;
     }
   }
 
   getChoice(event: any){
-    this.emitChoice.emit( {event:event, choice:this.selected} );
+    this.emitChoice.emit({ event:event, selected:this.selected, id:this.id });
   }
 
 }

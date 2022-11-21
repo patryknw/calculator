@@ -22,6 +22,7 @@ export class TextboxComponent implements OnInit {
   }
 
   setNumber(number: number){
+    if(isNaN(number)) return;
     let numberRounded = Math.round(number * 100) / 100;
     this.textbox.nativeElement.value = numberRounded;
   }

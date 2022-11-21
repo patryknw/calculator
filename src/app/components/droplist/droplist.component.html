@@ -1,1 +1,1 @@
-<ng-select [items]="droplistType" bindLabel="name" placeholder="{{ text }}" [(ngModel)]="selected" class="custom" (close)="getChoice($event)"></ng-select>
+<ng-select [items]="droplistItems" bindLabel="name" placeholder="{{ text }}" [(ngModel)]="selected" class="custom" id="{{ id }}" (close)="getChoice($event)"></ng-select>
