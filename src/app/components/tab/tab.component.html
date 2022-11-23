@@ -1,1 +1,1 @@
-<div class="element" (click)="onClick($event)"><p [ngClass]="highlighted ? 'highlighted' : 'default'">{{ text }}</p></div>
+<div class="element" [ngClass]="highlighted ? 'highlighted' : 'default'" (click)="onClick($event)"><div class="underline"><p>{{ text }}</p></div></div>
