@@ -1,0 +1,77 @@
+<div class="calculator">
+    <div class="main" id="tab1" #tab1>
+        <h1>Przelicznik produktów</h1>
+        <div class="droplist"><app-droplist text="Wybierz produkt" type="products" id="products" (emitChoice)="setChoiceValue($event)"></app-droplist></div>
+        <div class="textbox-container">
+            <div class="textbox"><app-textbox text="mililitr" id="mililitr" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="gram" id="gram" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <div class="textbox-container">
+            <div class="textbox"><app-textbox text="łyżeczka" id="lyzeczka" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="łyżka" id="lyzka" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="szklanka" id="szklanka" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <hr/>
+        <div class="info">
+            <p class="no-margin">1 szklanka ma pojemność 250 ml</p>
+            <p class="no-margin">1 łyżka ma pojemność 15 ml</p>
+            <p class="no-margin">1 łyżeczka ma pojemność 5 ml</p>
+        </div>
+    </div>
+
+    <div class="main" id="tab2" #tab2>
+        <h1><i class="fa-solid fa-scale-balanced"></i> Przelicznik wag</h1>
+        <div class="textbox-container">
+            <div class="textbox" [ngStyle]="{'width': '34%'}"><app-textbox text="ilość" id="ilosc1" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="droplist" [ngStyle]="{'width': '66%'}"><app-droplist text="jednostka" type="weightUnits" id="weightUnits1" (emitChoice)="setChoiceValue($event)"></app-droplist></div>
+        </div>
+        <div class="textbox-container">
+            <div class="textbox" [ngStyle]="{'width': '34%'}"><app-textbox text="ilość" id="ilosc2" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="droplist" [ngStyle]="{'width': '66%'}"><app-droplist text="jednostka" type="weightUnits" id="weightUnits2" (emitChoice)="setChoiceValue($event)"></app-droplist></div>
+        </div>
+        <h1><i class="fa-solid fa-glass-water"></i> Przelicznik pojemności</h1>
+        <div class="textbox-container">
+            <div class="textbox" [ngStyle]="{'width': '34%'}"><app-textbox text="ilość" id="ilosc3" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="droplist" [ngStyle]="{'width': '66%'}"><app-droplist text="jednostka" type="volumeUnits" id="volumeUnits1" (emitChoice)="setChoiceValue($event)"></app-droplist></div>
+        </div>
+        <div class="textbox-container">
+            <div class="textbox" [ngStyle]="{'width': '34%'}"><app-textbox text="ilość" id="ilosc4" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="droplist" [ngStyle]="{'width': '66%'}"><app-droplist text="jednostka" type="volumeUnits" id="volumeUnits2" (emitChoice)="setChoiceValue($event)"></app-droplist></div>
+        </div>
+        <h1><i class="fa-solid fa-temperature-half"></i> Przelicznik temperatur</h1>
+        <div class="textbox-container">
+            <div class="textbox"><app-textbox text="stopnie Celsjusza" id="celsjusz" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="stopnie Fahrenheita" id="fahrenheit" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+    </div>
+
+    <div class="main" id="tab3" #tab3>
+        <h1><i class="fa-solid fa-calculator"></i> Przelicznik foremek</h1>
+        <h2>Twoja foremka</h2>
+        <div class="textbox-container">
+            <div class="textbox"><app-radio group="foremka1" text="blacha" [checked]=true (radioClick)="switchTrayType($event)"></app-radio></div>
+            <div class="textbox"><app-radio group="foremka1" text="tortownica" [checked]=false (radioClick)="switchTrayType($event)"></app-radio></div>
+        </div>
+        <div class="textbox-container" id="blacha1" #blacha1>
+            <div class="textbox"><app-textbox text="długość" id="blacha1_dlugosc" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="szerokość" id="blacha1_szerokosc" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <div class="textbox-container" id="tortownica1" #tortownica1 [ngStyle]="{'width': '50%'}">
+            <div class="textbox"><app-textbox text="średnica" id="tortownica1_srednica" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <h2>Foremka z przepisu</h2>
+        <div class="textbox-container">
+            <div class="textbox"><app-radio group="foremka2" text="blacha" [checked]=false (radioClick)="switchTrayType($event)"></app-radio></div>
+            <div class="textbox"><app-radio group="foremka2" text="tortownica" [checked]=true (radioClick)="switchTrayType($event)"></app-radio></div>
+        </div>
+        <div class="textbox-container" id="blacha2" #blacha2>
+            <div class="textbox"><app-textbox text="długość" id="blacha2_dlugosc" (emitNumber)="convertUnits($event)"></app-textbox></div>
+            <div class="textbox"><app-textbox text="szerokość" id="blacha2_szerokosc" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <div class="textbox-container" id="tortownica2" #tortownica2 [ngStyle]="{'width': '50%'}">
+            <div class="textbox"><app-textbox text="średnica" id="tortownica2_srednica" (emitNumber)="convertUnits($event)"></app-textbox></div>
+        </div>
+        <p class="ratio" #ratio></p>
+        <p class="ratio_long" #ratio_long></p>
+    </div>
+</div>

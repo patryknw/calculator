@@ -1,6 +1,6 @@
 <p class="no-margin">
   <label class="pure-material-textfield-standard">
     <input type="number" placeholder=" " class="input" #textbox (keyup)="getNumber($event, textbox.value)">
-    <span class="text">{{ text }}</span>
+    <span class="text {{ id }}">{{ " " + text }}</span>
   </label>
 </p>

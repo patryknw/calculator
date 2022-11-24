@@ -1,0 +1,30 @@
+.app{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator{
+    margin: 0;
+    padding: 0;
+}
+
+.calculator #content{
+    margin: 0;
+    padding: 0;
+}
+
+.sidepanel{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.sidepanel img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+}

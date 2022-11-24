@@ -1,5 +1,12 @@
-<app-header></app-header>
-<app-nav (receiveTab)="content.switchTab($event)"></app-nav>
-<app-content #content></app-content>
+<div class="app">
+    <div class="calculator col-md-6 col-sm-12">
+        <app-header></app-header>
+        <app-nav (receiveTab)="calculator.switchTab($event)"></app-nav>
+        <app-calculator id="calculator" #calculator></app-calculator>
+    </div>
+    <div class="sidepanel d-none d-md-block col-md-6">
+        <img src="assets/images/desktop-image.png"/>
+    </div>
+</div>
 
 <router-outlet></router-outlet>

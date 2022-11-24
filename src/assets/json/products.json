@@ -3,142 +3,202 @@
     {
       "id": 1,
       "name": "Bułka tarta",
-      "oneGramInMillilitres": 2
+      "oneGramInMillilitres": 1.66
     },
     {
       "id": 2,
       "name": "Cukier",
-      "oneGramInMillilitres": 1.2
+      "oneGramInMillilitres": 1
     },
     {
       "id": 3,
       "name": "Cukier puder",
-      "oneGramInMillilitres": 2.1
-    },
-    {
-      "id": 4,
-      "name": "Cukier waniliowy",
       "oneGramInMillilitres": 1.25
     },
     {
+      "id": 4,
+      "name": "Cukier puder trzcinowy",
+      "oneGramInMillilitres": 1
+    },
+    {
       "id": 5,
-      "name": "Dżem",
-      "oneGramInMillilitres": 0.75
+      "name": "Cukier trzcinowy muscovado",
+      "oneGramInMillilitres": 1.2
     },
     {
       "id": 6,
-      "name": "Kakao",
-      "oneGramInMillilitres": 1.9
+      "name": "Cukier waniliowy",
+      "oneGramInMillilitres": 1
     },
     {
       "id": 7,
-      "name": "Kasza manna",
-      "oneGramInMillilitres": 1.3
+      "name": "Dżem",
+      "oneGramInMillilitres": 0.83
     },
     {
       "id": 8,
-      "name": "Kawa mielona",
-      "oneGramInMillilitres": 1.9
+      "name": "Kakao",
+      "oneGramInMillilitres": 1.66
     },
     {
       "id": 9,
-      "name": "Mak",
-      "oneGramInMillilitres": 1.6
+      "name": "Kasza manna",
+      "oneGramInMillilitres": 1.42
     },
     {
       "id": 10,
+      "name": "Kawa mielona",
+      "oneGramInMillilitres": 2
+    },
+    {
+      "id": 11,
+      "name": "Mak",
+      "oneGramInMillilitres": 1.66
+    },
+    {
+      "id": 12,
       "name": "Masło / Margaryna",
       "oneGramInMillilitres": 1
     },
     {
-      "id": 11,
-      "name": "Mąka pszenna",
-      "oneGramInMillilitres": 1.7
-    },
-    {
-      "id": 12,
-      "name": "Mąka żytnia",
-      "oneGramInMillilitres": 2.3
-    },
-    {
       "id": 13,
-      "name": "Mąka ziemniaczana",
-      "oneGramInMillilitres": 1.3
+      "name": "Mąka gryczana",
+      "oneGramInMillilitres": 1.4
     },
     {
       "id": 14,
+      "name": "Mąka kokosowa",
+      "oneGramInMillilitres": 1.2
+    },
+    {
+      "id": 15,
+      "name": "Mąka kukurydziana",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 16,
+      "name": "Mąka orkiszowa typ 1850",
+      "oneGramInMillilitres": 1.2
+    },
+    {
+      "id": 17,
+      "name": "Mąka owsiana",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 18,
+      "name": "Mąka pszenna",
+      "oneGramInMillilitres": 1.2
+    },
+    {
+      "id": 19,
+      "name": "Mąka razowa typ 2000",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 20,
+      "name": "Mąka ryżowa",
+      "oneGramInMillilitres": 1.6
+    },
+    {
+      "id": 21,
+      "name": "Mąka ziemniaczana",
+      "oneGramInMillilitres": 2.4
+    },
+    {
+      "id": 22,
+      "name": "Mąka żytnia",
+      "oneGramInMillilitres": 1.66
+    },
+    {
+      "id": 23,
       "name": "Miód",
       "oneGramInMillilitres": 0.7
     },
     {
-      "id": 15,
-      "name": "Mleko",
-      "oneGramInMillilitres": 0.97
-    },
-    {
-      "id": 16,
-      "name": "Mleko zagęszczone",
-      "oneGramInMillilitres": 0.77
-    },
-    {
-      "id": 17,
-      "name": "Olej",
-      "oneGramInMillilitres": 1.1
-    },
-    {
-      "id": 18,
-      "name": "Orzechy laskowe mielone",
-      "oneGramInMillilitres": 2
-    },
-    {
-      "id": 19,
-      "name": "Płatki owsiane",
-      "oneGramInMillilitres": 3
-    },
-    {
-      "id": 20,
-      "name": "Proszek do pieczenia",
-      "oneGramInMillilitres": 1
-    },
-    {
-      "id": 21,
-      "name": "Rodzynki",
-      "oneGramInMillilitres": 1.5
-    },
-    {
-      "id": 22,
-      "name": "Ryż",
-      "oneGramInMillilitres": 1.2
-    },
-    {
-      "id": 23,
-      "name": "Soda oczyszczona",
-      "oneGramInMillilitres": 1
-    },
-    {
       "id": 24,
-      "name": "Sól",
-      "oneGramInMillilitres": 0.82
+      "name": "Mleko",
+      "oneGramInMillilitres": 1
     },
     {
       "id": 25,
-      "name": "Śmietana 18%",
-      "oneGramInMillilitres": 0.97
+      "name": "Mleko zagęszczone",
+      "oneGramInMillilitres": 0.78
     },
     {
       "id": 26,
-      "name": "Śmietana kremówka 30%",
-      "oneGramInMillilitres": 0.99
+      "name": "Olej",
+      "oneGramInMillilitres": 1
     },
     {
       "id": 27,
-      "name": "Woda / Wino",
+      "name": "Olej rzepakowy",
       "oneGramInMillilitres": 1
     },
     {
       "id": 28,
-      "name": "Żelatyna",
+      "name": "Olej słonecznikowy",
+      "oneGramInMillilitres": 1.25
+    },
+    {
+      "id": 29,
+      "name": "Olej z pestek winogron",
       "oneGramInMillilitres": 1
+    },
+    {
+      "id": 30,
+      "name": "Orzechy laskowe mielone",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 31,
+      "name": "Płatki owsiane",
+      "oneGramInMillilitres": 2.77
+    },
+    {
+      "id": 32,
+      "name": "Proszek do pieczenia",
+      "oneGramInMillilitres": 1.66
+    },
+    {
+      "id": 33,
+      "name": "Rodzynki",
+      "oneGramInMillilitres": 1.4
+    },
+    {
+      "id": 34,
+      "name": "Ryż",
+      "oneGramInMillilitres": 1.11
+    },
+    {
+      "id": 35,
+      "name": "Soda oczyszczona",
+      "oneGramInMillilitres": 0.97
+    },
+    {
+      "id": 36,
+      "name": "Sól",
+      "oneGramInMillilitres": 0.77
+    },
+    {
+      "id": 37,
+      "name": "Śmietana 18%",
+      "oneGramInMillilitres": 1.25
+    },
+    {
+      "id": 38,
+      "name": "Śmietana kremówka 30%",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 39,
+      "name": "Woda / Wino",
+      "oneGramInMillilitres": 1
+    },
+    {
+      "id": 40,
+      "name": "Żelatyna",
+      "oneGramInMillilitres": 1.66
     }
   ]
 }

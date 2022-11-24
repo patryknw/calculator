@@ -20,28 +20,8 @@ hr{
     background-color: #626262;
 }
 
-.app{
-    display: flex;
-    flex-direction: row;
-}
-
-.sidepanel{
-    width: 50%;
-    margin-top: 40px;
-}
-
-.img-container{
-    width: 100%;
-    height: 500px;
-    text-align: center;
-}
-
-.sidepanel img{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: 100%;
+.calculator{
+    margin: 12px;
 }
 
 .main{

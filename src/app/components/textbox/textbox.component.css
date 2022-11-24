@@ -14,3 +14,33 @@ label:focus{
 .text, .input{
     padding-left: 6px;
 }
+
+.mililitr::before{
+    font-family: "FontAwesome";
+    content: "\f0c3";
+    font-weight: 900;
+}
+
+.gram::before{
+    font-family: "FontAwesome";
+    content: "\f24e";
+    font-weight: 900;
+}
+
+.lyzeczka::before{
+    font-family: "FontAwesome";
+    content: "\f2e5";
+    font-weight: 900;
+}
+
+.lyzka::before{
+    font-family: "FontAwesome";
+    content: "\f2e5";
+    font-weight: 900;
+}
+
+.szklanka::before{
+    font-family: "FontAwesome";
+    content: "\e4f4";
+    font-weight: 900;
+}

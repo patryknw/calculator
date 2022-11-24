@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavComponent } from './components/nav/nav.component';
 import { TabComponent } from './components/tab/tab.component';
-import { ContentComponent } from './components/content/content.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 import { TextboxComponent } from './components/textbox/textbox.component';
 import { DroplistComponent } from './components/droplist/droplist.component';
 import { RadioComponent } from './components/radio/radio.component';
@@ -20,7 +20,7 @@ import { RadioComponent } from './components/radio/radio.component';
     HeaderComponent,
     NavComponent,
     TabComponent,
-    ContentComponent,
+    CalculatorComponent,
     TextboxComponent,
     DroplistComponent,
     RadioComponent

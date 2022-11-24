@@ -2,11 +2,11 @@ import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } fro
 import { TextboxComponent } from '../textbox/textbox.component';
 
 @Component({
-  selector: 'app-content',
-  templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
-export class ContentComponent implements OnInit {
+export class CalculatorComponent implements OnInit {
   @ViewChild("tab1") tab1!: ElementRef;
   @ViewChild("tab2") tab2!: ElementRef;
   @ViewChild("tab3") tab3!: ElementRef;

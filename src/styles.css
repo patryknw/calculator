@@ -109,11 +109,6 @@
     color: rgb(var(--pure-material-primary-rgb, 149, 198, 51));
 }
 
-.pure-material-textfield-standard > input:focus + span::before,
-.pure-material-textfield-standard > textarea:focus + span::before {
-    opacity: 0.12;
-}
-
 .pure-material-textfield-standard > input:focus + span::after,
 .pure-material-textfield-standard > textarea:focus + span::after {
     transform: scale(1);
@@ -208,4 +203,10 @@
 
 .ng-select {
     padding-bottom: 0;
+}
+
+.ng-placeholder::before{
+    font-family: "FontAwesome";
+    content: "\f787";
+    font-weight: 900;
 }
