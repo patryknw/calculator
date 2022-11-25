@@ -205,7 +205,7 @@
     padding-bottom: 0;
 }
 
-.ng-placeholder::before{
+.custom .ng-placeholder::before{
     font-family: "FontAwesome";
     content: "\f787";
     font-weight: 900;
